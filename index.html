@@ -228,6 +228,137 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/深入了解HashMap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cisol">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cisol">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/02/深入了解HashMap/" itemprop="url">深入了解HashMap</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T21:24:15+08:00">
+                2018-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>HashMap相信大家平时用的非常熟练了，可是你真的了解它吗？<br>我们首先来回顾一些基本概念：</p>
+<ul>
+<li>HashMap继承自AbstractMap，实现了Map, Cloneable, Serializable接口。</li>
+<li>HashMap中存储的是key-value键值对映射，它的key和value都可以是null。</li>
+<li>HashMap是线程不安全的，不支持并发操作。</li>
+<li>JDK1.8以前的HashMap实现是数组+链表的形式，HashMap会计算插入进来的key的hashcode值，根据hashcode值来决定它应该插入到数组中的哪个位置，当出现hash碰撞的时候，会在该位置形成一个链表，将新插入的元素接到链表末尾。</li>
+<li>JDK1.8以后HashMap采用了数组+链表+红黑树的形式，当某个位置上的链表长度达到一定值（大于等于8）的时候，会将链表转化为红黑树，在结点数小于6的时候重新转化成链表。</li>
+<li>HashMap中有两个至关重要的参数：初始容量（initialCapacity）、负载因子（loadFactor），初始容量是哈希表创建时的容量，负载因子是哈希表自动扩容需要达到的一个比例，默认为0.75。</li></ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/02/深入了解HashMap/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/08/做一个热爱生活的人/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -298,10 +429,14 @@
 
       
         
-          
-            <p>周末花了一下午和一晚上的时间搭建了这个博客。其实早就想要搭建一个属于自己的博客，但是由于种种原因，迟迟没有动手，之前一直在<a href="http://cnblogs.com/cisol" target="_blank" rel="noopener">博客园</a>上面写博客，不过一直没有花太多心思在上面，所以写的东西质量也不太高。这次有了一个属于自己的空间，我想我应该能坚持记录自己生活和学习中的点滴吧，嗯，应该是这样。<br><br>随着生活节奏的不断加快，每天公司、住所两点一线的生活让我感受到了时间的珍贵，如何好好将不多的自由时间利用起来变得尤为重要。我还有很多技术要学习，还有很多很多书要看，我还要锻炼身体……但是每每坚持了那么四五天，又会因为周末的到来将整个计划全盘打乱，但是没关系，大不了从头再来。如果因为一时的懈怠而彻底的放纵自己，只会陷入惰性的无底深渊。<br><br>其实生活只是一场旅行，在这场旅行中我们遇到各种各样的人，经历各种各样的事，有喜有忧，有失落也有昂扬。在人生的历程中，我们不断的完善自己，不断的认识自己，努力的想要活出我们理想中的模样。虽然现实一次次将我们击垮，但这也是生活的一部分不是吗？如果生活总是顺风顺水，这样的人生还有什么乐趣可言呢？只有在翻越了一座又一座的大山以后，我们才能看到更美的风景。祸兮福之所倚，福兮祸之所伏。只要我们真诚的对待生活，生活也必将真诚的对待我们。<br><br>明正德三年，在贵州西北的龙场驿，37岁的王守仁被贬谪至此。“浓墨般的黑暗中，深山岩洞一灯如豆，犹如万古长夜中 ，我心本具的一点灵明”，此时的王守仁，给自己打造了一副石棺，日夜在棺中静坐参究：圣人处此，更有何道？“不知过了多久，王守仁心中有一点光明渐渐透显出来。一直蕴藏在他体内的一股强大生命能量，就像在地底长久奔突的岩浆终于找到了突破口一样，突然迸发而出……天地我心，一片光明！”。这就是著名的龙场悟道，也是整个阳明心学的逻辑起点。王阳明主张“圣人之道，吾性自足，向之求理于事物者，误也！”，人格完善与自我实现的道路，并不在外，而就在你我的心中，这也正是我们现代人所缺失的东西，我们总是向外诉求，常常忽视了自己的内心，致使自己的本心被各种物欲包裹，失去了生活的方向。我固然无法成为像阳明先生那样的圣贤，但一种有意义、有价值的生活正是我所追求的，充实自己的内心，找到人生的精神价值。<br><br>最后，引用俄国诗人普希金的一首诗做结，“假如生活欺骗了你，不要悲伤，不要心急！忧郁的日子里需要镇静，相信吧，快乐的日子将会来临！心儿永远向往着未来，现在却常是忧郁。一切都是瞬息，一切都将会过去；而那过去了的，就会成为亲切的怀恋”。作为一个在北京打拼的北漂，希望自己能够在这个喧嚣的城市中做一个热爱生活的人。</p>
-
-          
+          <p>周末花了一下午和一晚上的时间搭建了这个博客。其实早就想要搭建一个属于自己的博客，但是由于种种原因，迟迟没有动手，之前一直在<a href="http://cnblogs.com/cisol" target="_blank" rel="noopener">博客园</a>上面写博客，不过一直没有花太多心思在上面，所以写的<br>东西质量也不太高。这次有了一个属于自己的空间，我想我应该能坚持记录自己生活和学习中的点滴吧，嗯，应该是这样。<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/08/做一个热爱生活的人/#more" rel="contents">
+              Weiterlesen &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -381,7 +516,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">Artikel</span>
                 </a>
               </div>

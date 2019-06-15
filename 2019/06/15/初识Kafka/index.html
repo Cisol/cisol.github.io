@@ -79,12 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="Kafka是一种分布式的，基于发布/订阅的消息系统。发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。 主题和分区主题kafka的消息通过主题(topic)进行分类。主题就好比数据库的表，或者文件系统里的文件夹。 分区主题可以被分成若干个分区，一个分区就是一个提交日志。消息以追加的方式写入分区，然后以先入先出的顺">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Cisol">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/06/15/初识Kafka/index.html">
 <meta property="og:site_name" content="Cisol">
+<meta property="og:description" content="Kafka是一种分布式的，基于发布/订阅的消息系统。发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。 主题和分区主题kafka的消息通过主题(topic)进行分类。主题就好比数据库的表，或者文件系统里的文件夹。 分区主题可以被分成若干个分区，一个分区就是一个提交日志。消息以追加的方式写入分区，然后以先入先出的顺">
+<meta property="og:image" content="http://yoursite.com/2019/06/15/初识Kafka/初识kafka/kafka1.png">
+<meta property="og:updated_time" content="2019-06-15T10:28:34.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cisol">
+<meta name="twitter:description" content="Kafka是一种分布式的，基于发布/订阅的消息系统。发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。 主题和分区主题kafka的消息通过主题(topic)进行分类。主题就好比数据库的表，或者文件系统里的文件夹。 分区主题可以被分成若干个分区，一个分区就是一个提交日志。消息以追加的方式写入分区，然后以先入先出的顺">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/15/初识Kafka/初识kafka/kafka1.png">
 
 
 
@@ -114,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/06/15/初识Kafka/"/>
 
 
 
 
 
-  <title>Cisol</title>
+  <title> | Cisol</title>
   
 
 
@@ -139,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -245,9 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/15/初识Kafka/" itemprop="url">Untitled</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -297,9 +300,7 @@
       
 
       
-        
-          
-            <p>Kafka是一种分布式的，基于发布/订阅的消息系统。<br>发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。</p>
+        <p>Kafka是一种分布式的，基于发布/订阅的消息系统。<br>发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。</p>
 <h2 id="主题和分区"><a href="#主题和分区" class="headerlink" title="主题和分区"></a>主题和分区</h2><h4 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h4><p>kafka的消息通过主题(topic)进行分类。主题就好比数据库的表，或者文件系统里的文件夹。</p>
 <h4 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h4><p>主题可以被分成若干个分区，一个分区就是一个提交日志。消息以追加的方式写入分区，然后以先入先出的顺序读取。</p>
 <p>由于一个主题一般包含几个分区，因此无法在整个主题内保证消息的顺序，但可以保证消息在单个分区内的顺序。Kafka通过分区来实现数据冗余和伸缩性，由于分区可以分布在不同的服务器上，所以一个主题可以横跨多个服务器，以此来提供比单个服务器更强大的功能。偏移量是一种元数据，是一个不断递增的整数值，在给定的分区里，每个消息的偏移量都是唯一的。</p>
@@ -331,8 +332,6 @@
 <h4 id="5-流处理"><a href="#5-流处理" class="headerlink" title="5.流处理"></a>5.流处理</h4><p>通过使用流式处理框架，用户可以编写小型应用程序来操作Kafka消息。</p>
 <h4 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h4><p>《Kafka权威指南》</p>
 
-          
-        
       
     </div>
     
@@ -349,143 +348,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/02/深入了解HashMap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cisol">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cisol">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/02/深入了解HashMap/" itemprop="url">深入了解HashMap</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-02T21:24:15+08:00">
-                2018-09-02
-              </time>
+              <a href="/2018/09/02/深入了解HashMap/" rel="next" title="深入了解HashMap">
+                <i class="fa fa-chevron-left"></i> 深入了解HashMap
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="1、基本概念"><a href="#1、基本概念" class="headerlink" title="1、基本概念"></a>1、基本概念</h2><p>HashMap相信大家平时用的非常熟练了，可是你真的了解它吗？<br>我们首先来回顾一些基本概念：</p>
-<ul>
-<li>HashMap继承自AbstractMap，实现了Map, Cloneable, Serializable接口。</li>
-<li>HashMap中存储的是key-value键值对映射，它的key和value都可以是null。</li>
-<li>HashMap是线程不安全的，不支持并发操作。</li>
-<li>JDK1.8以前的HashMap实现是数组+链表的形式，HashMap会计算插入进来的key的hashcode值，根据hashcode值来决定它应该插入到数组中的哪个位置，当出现hash碰撞的时候，会在该位置形成一个链表，将新插入的元素接到链表末尾。</li>
-<li>JDK1.8以后HashMap采用了数组+链表+红黑树的形式，当某个位置上的链表长度达到一定值（大于等于8）的时候，会将链表转化为红黑树，在结点数小于6的时候重新转化成链表。</li>
-<li>HashMap中有两个至关重要的参数：初始容量（initialCapacity）、负载因子（loadFactor），初始容量是哈希表创建时的容量，负载因子是哈希表自动扩容需要达到的一个比例，默认为0.75。</li></ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/02/深入了解HashMap/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -495,134 +379,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/08/做一个热爱生活的人/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cisol">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cisol">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/08/做一个热爱生活的人/" itemprop="url">做一个热爱生活的人</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-08T23:58:25+08:00">
-                2018-01-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>周末花了一下午和一晚上的时间搭建了这个博客。其实早就想要搭建一个属于自己的博客，但是由于种种原因，迟迟没有动手，之前一直在<a href="http://cnblogs.com/cisol" target="_blank" rel="noopener">博客园</a>上面写博客，不过一直没有花太多心思在上面，所以写的<br>东西质量也不太高。这次有了一个属于自己的空间，我想我应该能坚持记录自己生活和学习中的点滴吧，嗯，应该是这样。<br></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/01/08/做一个热爱生活的人/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -630,6 +391,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -650,8 +415,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -693,6 +467,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题和分区"><span class="nav-number">1.</span> <span class="nav-text">主题和分区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主题"><span class="nav-number">1.0.1.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分区"><span class="nav-number">1.0.2.</span> <span class="nav-text">分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Broker"><span class="nav-number">1.0.3.</span> <span class="nav-text">Broker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分区复制"><span class="nav-number">1.0.4.</span> <span class="nav-text">分区复制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#消息保留策略"><span class="nav-number">1.0.5.</span> <span class="nav-text">消息保留策略</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多集群部署"><span class="nav-number">2.</span> <span class="nav-text">多集群部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点："><span class="nav-number">2.0.1.</span> <span class="nav-text">优点：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么选择Kafka"><span class="nav-number">3.</span> <span class="nav-text">为什么选择Kafka</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多个生产者消费者"><span class="nav-number">3.0.1.</span> <span class="nav-text">多个生产者消费者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于磁盘的数据存储"><span class="nav-number">3.0.2.</span> <span class="nav-text">基于磁盘的数据存储</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伸缩性"><span class="nav-number">3.0.3.</span> <span class="nav-text">伸缩性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高性能"><span class="nav-number">3.0.4.</span> <span class="nav-text">高性能</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用场景"><span class="nav-number">4.</span> <span class="nav-text">使用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-活动跟踪"><span class="nav-number">4.0.1.</span> <span class="nav-text">1.活动跟踪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-传递消息"><span class="nav-number">4.0.2.</span> <span class="nav-text">2.传递消息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-度量指标和日志记录"><span class="nav-number">4.0.3.</span> <span class="nav-text">3.度量指标和日志记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-提交日志"><span class="nav-number">4.0.4.</span> <span class="nav-text">4.提交日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-流处理"><span class="nav-number">4.0.5.</span> <span class="nav-text">5.流处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考资料："><span class="nav-number">4.0.6.</span> <span class="nav-text">参考资料：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -826,6 +616,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

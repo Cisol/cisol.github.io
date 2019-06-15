@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Kafka是一种分布式的，基于发布/订阅的消息系统。发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。 主题和分区主题kafka的消息通过主题(topic)进行分类。主题就好比数据库的表，或者文件系统里的文件夹。 分区主题可以被分成若干个分区，一个分区就是一个提交日志。消息以追加的方式写入分区，然后以先入先出的顺">
+<meta name="description" content="Kafka是一种分布式的，基于发布/订阅的消息系统。发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识Kafka">
 <meta property="og:url" content="http://yoursite.com/2019/06/15/初识Kafka/index.html">
 <meta property="og:site_name" content="Cisol">
-<meta property="og:description" content="Kafka是一种分布式的，基于发布/订阅的消息系统。发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。 主题和分区主题kafka的消息通过主题(topic)进行分类。主题就好比数据库的表，或者文件系统里的文件夹。 分区主题可以被分成若干个分区，一个分区就是一个提交日志。消息以追加的方式写入分区，然后以先入先出的顺">
-<meta property="og:image" content="http://yoursite.com/2019/06/15/初识Kafka/初识kafka/kafka1.png">
-<meta property="og:updated_time" content="2019-06-15T10:32:27.632Z">
+<meta property="og:description" content="Kafka是一种分布式的，基于发布/订阅的消息系统。发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。">
+<meta property="og:image" content="http://yoursite.com/2019/06/15/初识Kafka/kafka1.jpg">
+<meta property="og:updated_time" content="2019-06-15T11:09:02.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Kafka">
-<meta name="twitter:description" content="Kafka是一种分布式的，基于发布/订阅的消息系统。发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。 主题和分区主题kafka的消息通过主题(topic)进行分类。主题就好比数据库的表，或者文件系统里的文件夹。 分区主题可以被分成若干个分区，一个分区就是一个提交日志。消息以追加的方式写入分区，然后以先入先出的顺">
-<meta name="twitter:image" content="http://yoursite.com/2019/06/15/初识Kafka/初识kafka/kafka1.png">
+<meta name="twitter:description" content="Kafka是一种分布式的，基于发布/订阅的消息系统。发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。">
+<meta name="twitter:image" content="http://yoursite.com/2019/06/15/初识Kafka/kafka1.jpg">
 
 
 
@@ -262,7 +262,7 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-15T18:32:27+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-15T19:09:02+08:00">
                 2019-06-15
               </time>
             
@@ -300,7 +300,7 @@
       
 
       
-        <p>Kafka是一种分布式的，基于发布/订阅的消息系统。<br>发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。</p>
+        <p>Kafka是一种分布式的，基于发布/订阅的消息系统。<br>发布者以某种方式对消息进行分类，消费者订阅它们，以便接收特定类型的消息。发布与订阅系统一般会有一个broker，也就是发布消息的中心点。<br><a id="more"></a></p>
 <h2 id="主题和分区"><a href="#主题和分区" class="headerlink" title="主题和分区"></a>主题和分区</h2><h4 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h4><p>kafka的消息通过主题(topic)进行分类。主题就好比数据库的表，或者文件系统里的文件夹。</p>
 <h4 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h4><p>主题可以被分成若干个分区，一个分区就是一个提交日志。消息以追加的方式写入分区，然后以先入先出的顺序读取。</p>
 <p>由于一个主题一般包含几个分区，因此无法在整个主题内保证消息的顺序，但可以保证消息在单个分区内的顺序。Kafka通过分区来实现数据冗余和伸缩性，由于分区可以分布在不同的服务器上，所以一个主题可以横跨多个服务器，以此来提供比单个服务器更强大的功能。偏移量是一种元数据，是一个不断递增的整数值，在给定的分区里，每个消息的偏移量都是唯一的。</p>
@@ -314,7 +314,7 @@
 <p>每个集群都有一个broker同时充当了集群控制器（自动从集群的活跃成员中选举出来）。控制器负责管理工作，包括将分区分配给broker和监控broker。</p>
 <h4 id="分区复制"><a href="#分区复制" class="headerlink" title="分区复制"></a>分区复制</h4><p>一个分区可以分配给多个broker，这个时候会发生分区复制。这种复制机制为分区提供了消息冗余，如果有一个broker失效，其他broker可以接管领导权。</p>
 <h4 id="消息保留策略"><a href="#消息保留策略" class="headerlink" title="消息保留策略"></a>消息保留策略</h4><p>要么保留一段时间（比如7天），要么保留到消息达到一定大小的字节数（比如1GB）。当消息数量达到这些上限时，旧消息就会过期并被删除。<br>kafka的消息复制只能在单个集群里进行，不能在多个集群之间进行。kafka提供了一种MirrorMaker的工具，可以实现集群之间的消息复制。</p>
-<p><img src="/2019/06/15/初识Kafka/初识kafka/kafka1.png" alt="Kafka集群"></p>
+<p><img src="/2019/06/15/初识Kafka/kafka1.jpg" alt="Kafka集群"></p>
 <h2 id="多集群部署"><a href="#多集群部署" class="headerlink" title="多集群部署"></a>多集群部署</h2><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ul>
 <li>1.数据类型分离</li>
 <li>2.安全需求隔离</li>

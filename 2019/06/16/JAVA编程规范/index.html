@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、命名规范 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。反例：name / __name / $Object / name / name$ / Object$  类名使用 UpperCamelCase 风格，必须遵从驼峰形式；方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。  代码中的命名严禁使用拼音与英文混合的方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java编程规范">
+<meta property="og:url" content="http://yoursite.com/2019/06/16/JAVA编程规范/index.html">
+<meta property="og:site_name" content="Cisol">
+<meta property="og:description" content="一、命名规范 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。反例：name / __name / $Object / name / name$ / Object$  类名使用 UpperCamelCase 风格，必须遵从驼峰形式；方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。  代码中的命名严禁使用拼音与英文混合的方式">
+<meta property="og:updated_time" content="2019-06-16T07:00:26.519Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java编程规范">
+<meta name="twitter:description" content="一、命名规范 代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。反例：name / __name / $Object / name / name$ / Object$  类名使用 UpperCamelCase 风格，必须遵从驼峰形式；方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。  代码中的命名严禁使用拼音与英文混合的方式">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/16/JAVA编程规范/"/>
+
+
+
+
+
+  <title>Java编程规范 | Cisol</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Cisol</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/16/JAVA编程规范/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cisol">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cisol">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java编程规范</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-16T15:00:26+08:00">
+                2019-06-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、命名规范"><a href="#一、命名规范" class="headerlink" title="一、命名规范"></a>一、命名规范</h2><ol>
+<li><p>代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结束。<br>反例：<em>name / __name / $Object / name</em> / name$ / Object$</p>
+</li>
+<li><p>类名使用 UpperCamelCase 风格，必须遵从驼峰形式；方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格，必须遵从驼峰形式。</p>
+</li>
+<li><p>代码中的命名严禁使用拼音与英文混合的方式，更不允许直接使用中文的方式</p>
+</li>
+<li><p>常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。</p>
+</li>
+<li><p>抽象类命名使用 Abstract 或 Base 开头；异常类命名使用 Exception 结尾；测试类命名以它要测试的类的名称开始，以 Test 结尾。</p>
+</li>
+<li><p>中括号是数组类型的一部分，数组定义如下：String[] args;<br>反例：使用 String args[]的方式来定义。</p>
+<a id="more"></a>
+</li>
+<li><p>POJO 类中布尔类型的变量，都不要加 is，否则部分框架解析会引起序列化错误。<br>反例：定义为基本数据类型 Boolean isDeleted；的属性，它的方法也是 isDeleted()，RPC框架在反向解析的时候，“以为”对应的属性名称是 deleted，导致属性获取不到，进而抛出异 常。</p>
+</li>
+<li><p>包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一使用单数形式，但是类名如果有复数含义，类名可以使用复数形式。</p>
+</li>
+<li><p>杜绝完全不规范的缩写，避免望文不知义。<br>反例：AbstractClass“缩写”命名成 AbsClass；condition“缩写”命名成 condi，UserManagement“缩写”命名成UserMgmt，此类随意缩写严重降低了代码的可阅读性。</p>
+</li>
+<li><p>为了达到代码自解释的目标，任何自定义编程元素在命名时，使用尽量完整的单词组合来表达其意。<br>正例：从远程仓库拉取代码的类命名为 PullCodeFromRemoteRepository。<br>反例：变量 int a; 的随意命名方式。</p>
+</li>
+<li><p>如果模块、接口、类、方法使用了设计模式，在命名时体现出具体模式。<br>==说明==：将设计模式体现在名字中，有利于阅读者快速理解架构设计理念。<br>正例：public class OrderFactory; public class LoginProxy; public class ResourceObserver;</p>
+</li>
+<li><p>接口类中的方法和属性不要加任何修饰符号（public 也不要加），保持代码的简洁性，并加上有效的 Javadoc 注释。尽量不要在接口里定义变量，如果一定要定义变量，肯定是与接口方法相关，并且是整个应用的基础常量。<br>正例：接口方法签名：void f(); 接口基础常量表示：String COMPANY = “xiaomi”;<br>反例：接口方法定义：public abstract void f();<br>==说明==：JDK8 中接口允许有默认实现，那么这个 default 方法，是对所有实现类都有价值的默认实现。</p>
+</li>
+<li><p>接口和实现类的命名有两套规则：<br>1）对于 Service 和 DAO 类，基于 SOA 的理念，暴露出来的服务一定是接口，内部的实现类用 Impl 的后缀与接口区别。<br>正例：CacheServiceImpl 实现 CacheService 接口。<br>2）如果是形容能力的接口名称，取对应的形容词做接口名（通常是–able 的形式）。<br>正例：AbstractTranslator 实现 Translatable。</p>
+</li>
+<li><p>long 或者 Long 初始赋值时，使用大写的 L，不能是小写的 l，小写容易跟数字 1 混淆，造成误解。</p>
+<h2 id="二、代码格式"><a href="#二、代码格式" class="headerlink" title="二、代码格式"></a>二、代码格式</h2><p>大括号的使用约定。如果是大括号内为空，则简洁地写成{}即可，不需要换行；如果是非空代码块则： </p>
+</li>
+</ol>
+<ul>
+<li>左大括号前不换行。 </li>
+<li>左大括号后换行。 </li>
+<li>右大括号前换行。 </li>
+<li>右大括号后还有 else 等代码则不换行；表示终止的右大括号后必须换行。</li>
+</ul>
+<p>正例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (a &gt; b) </span><br><span class="line">&#123;</span><br><span class="line">   doSomething();</span><br><span class="line">&#125;</span><br><span class="line">if (a &gt; b) &#123;</span><br><span class="line">    doSomething();</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    doSomething();</span><br><span class="line">&#125;</span><br><span class="line">void doNothing() &#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>左小括号和字符之间不出现空格；同样，右小括号和字符之间也不出现空格。<br>反例：if (空格 a == b 空格)</p>
+</li>
+<li><p>if/for/while/switch/do 等保留字与括号之间都必须加空格。</p>
+</li>
+</ol>
+<p>4.任何二目、三目运算符的左右两边都需要加一个空格。<br>==说明==：运算符包括赋值运算符=、逻辑运算符&amp;&amp;、加减乘除符号等。</p>
+<p>5.采用 4 个空格缩进，禁止使用 tab 字符。在函数体的开始、类和接口的定义、以及 if 、 else 、 for 、 do 、 while 、 switch 、 case 、 try 、 catch 、 finally 等语句中的代码或者static 、 synchronized 等代码块中都要采用上述缩进方式。<br>==说明==：如果使用 tab 缩进，必须设置 1 个 tab 为 4 个空格。IDEA 设置 tab 为 4 个空格时， 请勿勾选 Use tab character；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) &#123; </span><br><span class="line">    // 缩进 4 个空格</span><br><span class="line">    String say = &quot;hello&quot;; </span><br><span class="line">    // 运算符的左右必须有一个空格</span><br><span class="line">    int flag = 0; </span><br><span class="line">    // 关键词 if 与括号之间必须有一个空格，括号内的 f 与左括号，0 与右括号不需要空格</span><br><span class="line">    if (flag == 0) &#123; </span><br><span class="line">        System.out.println(say); </span><br><span class="line">    &#125; </span><br><span class="line">    // 左大括号前加空格且不换行；左大括号后换行 </span><br><span class="line">    if (flag == 1) &#123; </span><br><span class="line">        System.out.println(&quot;world&quot;); // 右大括号前换行，右大括号后有 else，不用换行 </span><br><span class="line">    &#125; else &#123; </span><br><span class="line">        System.out.println(&quot;ok&quot;); // 在右大括号后直接结束，则必须换行 </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>注释的双斜线与注释内容之间有且仅有一个空格。</p>
+</li>
+<li><p>方法参数在定义和传入时，多个参数逗号后边必须加空格。<br>正例：下例中实参的”a”,后边必须要有一个空格。 method(“a”, “b”, “c”); </p>
+</li>
+<li><p>一行代码的长度不应该超出 120 个字节，超长的代码应该换行；如果换行，应该遵循如下原则：</p>
+</li>
+</ol>
+<ul>
+<li>在逗号 ‘,’ 后换行；</li>
+<li>在较低优先级操作符前换行，操作符位于新行之首；</li>
+<li>采用适当缩进保证代码清晰易读；</li>
+<li>方法调用的点符号与下文一起换行；</li>
+<li>在括号前不要换行；<br>正例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/* 超过 120 字节时，需要换行，换行后要使代码清晰易读 */</span><br><span class="line">someMethod(long Expression1,</span><br><span class="line">            long Expression2,</span><br><span class="line">            long Expression3,</span><br><span class="line">            long Expression4,</span><br><span class="line">            long Expression5);</span><br><span class="line"></span><br><span class="line">longName1 = longName2</span><br><span class="line">          + (longName3 + longName4 – longName5)</span><br><span class="line">          + (4 + longName6);</span><br><span class="line"></span><br><span class="line">StringBuilder strBuilder = new StringBuilder();</span><br><span class="line">strBuilder.append(&quot;userName=&quot;).append(userName)</span><br><span class="line">           .append(&quot;&amp;address=&quot;).append(address);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><p>IDE 的 text file encoding 设置为 UTF-8; IDE 中文件的换行符使用 Unix 格式， 不要使用 Windows 格式。</p>
+</li>
+<li><p>方法体内的执行语句组、变量的定义语句组、不同的业务逻辑之间或者不同的语义之间插入一个空行。</p>
+</li>
+</ol>
+<h2 id="三、语句"><a href="#三、语句" class="headerlink" title="三、语句"></a>三、语句</h2><p>避免通过一个类的对象引用访问此类的静态变量或静态方法，无谓增加编译器解析成本，直接用类名来访问即可。</p>
+<ol>
+<li><p>其他项目正在调用的接口，不允许修改方法签名，避免对接口调用方产生影响。接口过时必须加@Deprecated 注解，并清晰地说明采用的新接口或者新服务是什么。</p>
+</li>
+<li><p>不能使用过时的类或方法。<br>==说明==：java.net.URLDecoder 中的方法 decode(String encodeStr) 这个方法已经过时，应该使用双参数 decode(String source, String encode)。接口提供方既然明确是过时接口，那么有义务同时提供新的接口；作为调用方来说，有义务去考证过时方法的新实现是什么。</p>
+</li>
+<li><p>Object 的 equals 方法容易抛空指针异常，应使用常量或确定有值的对象来调用 equals。<br>正例：<br>“test”.equals(object);<br>反例：<br>object.equals(“test”);<br>==说明==：推荐使用 java.util.Objects#equals（JDK7 引入的工具类）</p>
+</li>
+<li><p>所有的相同类型的包装类对象之间值的比较，全部使用 equals 方法比较。<br>==说明==：对于 Integer var = ? 在-128 至 127 范围内的赋值，Integer 对象是在IntegerCache.cache 产生，会复用已有对象，这个区间内的 Integer 值可以直接使用==进行 判断，但是这个区间之外的所有数据，都会在堆上产生，并不会复用已有对象，这是一个大坑， 推荐使用 equals 方法进行判断。</p>
+</li>
+<li><p>序列化类新增属性时，请不要修改 serialVersionUID 字段，避免反序列失败；如果完全不兼容升级，避免反序列化混乱，那么请修改 serialVersionUID 值</p>
+</li>
+<li><p>构造方法里面禁止加入任何业务逻辑，如果有初始化逻辑，请放在 init 方法中。</p>
+</li>
+<li><p>POJO 类必须写 toString 方法。使用 IDE 的中工具：source&gt; generate toString 时，如果继承了另一个 POJO 类，注意在前面加一下 super.toString。<br>==说明==：在方法执行抛出异常时，可以直接调用 POJO 的 toString()方法打印其属性值，便于排查问题。</p>
+</li>
+<li><p>使用索引访问用 String 的 split 方法得到的数组时，需做最后一个分隔符后有无内容的检查，否则会有抛 IndexOutOfBoundsException 的风险。<br>==说明==： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;a,b,c,,&quot;; </span><br><span class="line">String[] ary = str.split(&quot;,&quot;); // 预期大于 3，结果是 3 </span><br><span class="line">System.out.println(ary.length);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>循环体内，字符串的连接方式，使用 StringBuilder 的 append 方法进行扩展。<br>==说明==：反编译出的字节码文件显示每次循环都会 new 出一个 StringBuilder 对象，然后进行 append 操作，最后通过 toString 方法返回 String 对象，造成内存资源浪费。 </p>
+</li>
+</ol>
+<p>反例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;start&quot;; </span><br><span class="line">             for (int i = 0; i &lt; 100; i++) &#123;</span><br><span class="line">                 str = str + &quot;hello&quot;; </span><br><span class="line">             &#125;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>慎用 Object 的 clone 方法来拷贝对象。<br>==说明==：对象的 clone 方法默认是浅拷贝，若想实现深拷贝需要重写 clone 方法实现属性对象 的拷贝。</p>
+</li>
+<li><p>类成员与方法访问控制从严：<br>1） 如果不允许外部直接通过 new 来创建对象，那么构造方法必须是 private。<br>2） 工具类不允许有 public 或 default 构造方法。<br>3） 类非 static 成员变量并且与子类共享，必须是 protected。<br>4） 类非 static 成员变量并且仅在本类使用，必须是 private。<br>5） 类 static 成员变量如果仅在本类使用，必须是 private。<br>6） 若是 static 成员变量，必须考虑是否为 final。<br>7） 类成员方法只供类内部调用，必须是 private。<br>8） 类成员方法只对继承类公开，那么限制为 protected。<br>==说明==：任何类、方法、参数、变量，严控访问范围。过于宽泛的访问范围，不利于模块解耦。</p>
+</li>
+<li><p>关于 hashCode 和 equals 的处理，遵循如下规则：<br>1） 只要重写 equals，就必须重写 hashCode。<br>2） 因为 Set 存储的是不重复的对象，依据 hashCode 和 equals 进行判断，所以 Set 存储的对象必须重写这两个方法。<br>3） 如果自定义对象做为 Map 的键，那么必须重写 hashCode 和 equals。<br>==说明==：String 重写了 hashCode 和 equals 方法，所以我们可以非常愉快地使用 String 对象 作为 key 来使用。</p>
+</li>
+<li><p>获取单例对象需要保证线程安全，其中的方法也要保证线程安全。<br>==说明==：资源驱动类、工具类、单例工厂类都需要注意。</p>
+</li>
+<li><p>创建线程或线程池时请指定有意义的线程名称，方便出错时回溯。<br>正例： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class TimerTaskThread extends Thread &#123; </span><br><span class="line">     public TimerTaskThread() &#123; </span><br><span class="line">         super.setName(“TimerTaskThread&quot;);</span><br><span class="line">         ... </span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>线程资源必须通过线程池提供，不允许在应用中自行显式创建线程。<br>==说明==：使用线程池的好处是减少在创建和销毁线程上所花的时间以及系统资源的开销，解决资源不足的问题。如果不使用线程池，有可能造成系统创建大量同类线程而导致消耗完内存或者 “过度切换”的问题。</p>
+</li>
+<li><p>SimpleDateFormat 是线程不安全的类，一般不要定义为 static 变量，如果定义为 static，必须加锁，或者使用 DateUtils 工具类。</p>
+</li>
+<li><p>高并发时，同步调用应该去考量锁的性能损耗。能用无锁数据结构，就不要用锁；能锁区块，就不要锁整个方法体；能用对象锁，就不要用类锁。<br>==说明==：尽可能使加锁的代码块工作量尽可能的小，避免在锁代码块中调用 RPC 方法。</p>
+</li>
+<li><p>对多个资源、数据库表、对象同时加锁时，需要保持一致的加锁顺序，否则可能会造成死锁。<br>==说明==：线程一需要对表 A、B、C 依次全部加锁后才可以进行更新操作，那么线程二的加锁顺序 也必须是 A、B、C，否则可能出现死锁。</p>
+</li>
+<li><p>并发修改同一记录时，避免更新丢失，需要加锁。要么在应用层加锁，要么在缓存加锁，要么在数据库层使用乐观锁，使用 version 作为更新依据。<br>==说明==：如果每次访问冲突概率小于 20%，推荐使用乐观锁，否则使用悲观锁。乐观锁的重试次 数不得小于 3 次。</p>
+</li>
+<li><p>多线程并行处理定时任务时，Timer 运行多个 TimeTask 时，只要其中之一没有捕获抛出的异常，其它任务便会自动终止运行，使用 ScheduledExecutorService 则没有这个问题。</p>
+</li>
+<li><p>使用 CountDownLatch 进行异步转同步操作，每个线程退出前必须调用 countDown 方法，线程执行代码注意 catch 异常，确保 countDown 方法被执行到，避免主线程无法执行至 await 方法，直到超时才返回结果。<br>==说明==：注意，子线程抛出异常堆栈，不能在主线程 try-catch 到。</p>
+</li>
+<li><p>避免 Random 实例被多线程使用，虽然共享该实例是线程安全的，但会因竞争同一 seed 导致的性能下降。<br>==说明==：Random 实例包括 java.util.Random 的实例或者 Math.random()的方式。 正例：在 JDK7 之后，可以直接使用 API ThreadLocalRandom，而在 JDK7 之前，需要编码保 证每个线程持有一个实例。</p>
+</li>
+<li><p>volatile 解决多线程内存不可见问题。对于一写多读，是可以解决变量同步问题， 但是如果多写，同样无法解决线程安全问题。如果是 count++操作，使用如下类实现： AtomicInteger count = new AtomicInteger(); count.addAndGet(1); 如果是 JDK8，推荐使用 LongAdder 对象，比 AtomicLong 性能更好（减少乐观锁的重试次数）。</p>
+</li>
+<li><p>HashMap 在容量不够进行 resize 时由于高并发可能出现死链，导致 CPU 飙升，在开发过程中可以使用其它数据结构或加锁来规避此风险。</p>
+</li>
+<li><p>在一个 switch 块内，每个 case 要么通过 break/return 等来终止，要么注释说明程序将继续执行到哪一个 case 为止；在一个 switch 块内，都必须包含一个 default 语句并且放在最后，即使它什么代码也没有。</p>
+</li>
+<li><p>在 if/else/for/while/do 语句中必须使用大括号。即使只有一行代码，避免采用单行的编码方式：if (condition) statements;</p>
+</li>
+<li><p>表达异常的分支时，少用 if-else 方式，这种方式可以改写成：<br>if (condition) { … return obj; } // 接着写 else 的业务逻辑代码;<br>==说明==：如果非得使用 if()…else if()…else…方式表达逻辑，避免后续代码维护困难，请勿超过 3 层。</p>
+</li>
+<li><p>布尔表达式中的布尔运算符 (&amp;&amp;,||) 的个数不超过 3 个。</p>
+</li>
+<li><p>单个方法中逻辑行数建议不超过 50 行，单个文件长度在 1000 行以内。</p>
+</li>
+</ol>
+<h2 id="四、注释规约"><a href="#四、注释规约" class="headerlink" title="四、注释规约"></a>四、注释规约</h2><p>类、类属性、类方法的注释必须使用 Javadoc 规范，使用/<em>*内容</em>/格式，不得使用 // xxx 方式。<br>==说明==：在 IDE 编辑窗口中，Javadoc 方式会提示相关注释，生成 Javadoc 可以正确输出相应注释；在 IDE 中，工程调用方法时，不进入方法即可悬浮提示方法、参数、返回值的意义，提高阅读效率。</p>
+<ol>
+<li><p>所有的抽象方法（包括接口中的方法）必须要用 Javadoc 注释、除了返回值、参数、 异常说明外，还必须指出该方法做什么事情，实现什么功能。</p>
+</li>
+<li><p>所有的类都必须添加创建者和创建日期。</p>
+</li>
+<li><p>方法内部单行注释，在被注释语句上方另起一行，使用//注释。方法内部多行注释 使用/<em> </em>/注释，注意与代码对齐。</p>
+</li>
+<li><p>所有的枚举类型字段必须要有注释，说明每个数据项的用途。</p>
+</li>
+<li><p>特殊注释标记，请注明标记人与标记时间。注意及时处理这些标记，通过标记扫描， 经常清理此类标记。线上故障有时候就是来源于这些标记处的代码。 </p>
+</li>
+</ol>
+<ul>
+<li>待办事宜（TODO）:（ 标记人，标记时间，[预计处理时间]） 表示需要实现，但目前还未实现的功能。这实际上是一个 Javadoc 的标签，目前的 Javadoc 还没有实现，但已经被广泛使用。只能应用于类，接口和方法（因为它是一个 Javadoc 标签）。 </li>
+<li>错误，不能工作（FIXME）:（标记人，标记时间，[预计处理时间]） 在注释中用 FIXME 标记某代码是错误的，而且不能工作，需要及时纠正的情况。</li>
+</ul>
+<h2 id="五、代码度量"><a href="#五、代码度量" class="headerlink" title="五、代码度量"></a>五、代码度量</h2><ol>
+<li>DAC 度量值不要大于 7<br>==说明==： DAC(Data Abstraction Coupling) 数据抽象耦合度是描述对象之间的耦合度的一种代码度量。 DAC 度量值表示一个类中有实例化的其它类的个数。 实例化其他类是指其他类的对象作为这个类的成员变量，并且由这个类主动创建这个类的实例。比如以下代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class B&#123;</span><br><span class="line">    …..</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">public   class   A&#123;</span><br><span class="line">   B bMember = new B ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在这种情况下， A 的 DAC 的值为 1 。</p>
+<ol>
+<li>CC 度量值不大于 10<br>==说明==：CC(CyclomaticComplexity) 圈复杂度指一个方法的独立路径的数量，可以用一个方法内 if,while,do,for,catch,switch,case,?: 语句与 &amp;&amp;,||操作符的总个数来度量。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class A &#123;</span><br><span class="line">    protected int bFunction ()&#123;</span><br><span class="line">        if (true) &#123;</span><br><span class="line">            return x; // 1st path</span><br><span class="line">        &#125; else if (false) &#123;</span><br><span class="line">            return x+1; // 2nd path</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return 4; // 3rd path</span><br><span class="line">        &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上面的代码，CC 的值为 3</p>
+<h2 id="六、日志处理"><a href="#六、日志处理" class="headerlink" title="六、日志处理"></a>六、日志处理</h2><p>Java 类库中定义的一类 RuntimeException 可以通过预先检查进行规避，而不应该 通过 catch 来处理，比如：IndexOutOfBoundsException，NullPointerException 等等。<br>==说明==：无法通过预检查的异常除外，如在解析一个外部传来的字符串形式数字时，通过 catch NumberFormatException 来实现。</p>
+<ol>
+<li><p>异常不要用来做流程控制，条件控制，因为异常的处理效率比条件分支低。</p>
+</li>
+<li><p>对大段代码进行 try-catch，这是不负责任的表现。catch 时请分清稳定代码和非稳定代码，稳定代码指的是无论如何不会出错的代码。对于非稳定代码的 catch 尽可能进行区分异常类型，再做对应的异常处理。</p>
+</li>
+<li><p>捕获异常是为了处理它，不要捕获了却什么都不处理而抛弃之，如果不想处理它，请将该异常抛给它的调用者。最外层的业务使用者，必须处理异常，将其转化为用户可以理解的 内容。</p>
+</li>
+<li><p>有 try 块放到了事务代码中，catch 异常后，如果需要回滚事务，一定要注意手动回滚事务。</p>
+</li>
+<li><p>finally 块必须对资源对象、流对象进行关闭，有异常也要做 try-catch。 说明：如果 JDK7 及以上，可以使用 try-with-resources 方式。</p>
+</li>
+<li><p>不能在 finally 块中使用 return，finally 块中的 return 返回后方法结束执行，不会再执行 try 块中的 return 语句。</p>
+</li>
+</ol>
+<ol>
+<li><p>捕获异常与抛异常，必须是完全匹配，或者捕获异常是抛异常的父类。</p>
+</li>
+<li><p>应用中不可直接使用日志系统（Log4j、Logback）中的 API，而应依赖使用日志框架 SLF4J 中的 API，使用门面模式的日志框架，有利于维护和各个类的日志处理方式统一。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import org.slf4j.Logger; </span><br><span class="line">import org.slf4j.LoggerFactory; </span><br><span class="line">private static final Logger logger = LoggerFactory.getLogger(Abc.class);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>日志文件推荐至少保存 15 天，因为有些异常具备以“周”为频次发生的特点。</p>
+</li>
+<li><p>对 trace/debug/info 级别的日志输出，必须使用条件输出形式或者使用占位符的方式。<br>==说明==：logger.debug(“Processing trade with id: “ + id + “ and symbol: “ + symbol);<br>如果日志级别是 warn，上述日志不会打印，但是会执行字符串拼接操作，如果 symbol 是对象， 会执行 toString()方法，浪费了系统资源，执行了上述操作，最终日志却没有打印。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">（条件） </span><br><span class="line">     if (logger.isDebugEnabled()) &#123; </span><br><span class="line">           logger.debug(&quot;Processing trade with id: &quot; + id + &quot; and symbol: &quot; + symbol); </span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>正例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（占位符） </span><br><span class="line">     logger.debug(&quot;Processing trade with id: &#123;&#125; and symbol : &#123;&#125; &quot;, id, symbol);</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>避免重复打印日志，浪费磁盘空间，务必在 log4j.xml 中设置 additivity=false。<br>正例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;logger name=&quot;com.taobao.dubbo.config&quot; additivity=&quot;false&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>谨慎地记录日志。生产环境禁止输出 debug 日志；有选择地输出 info 日志；如果使 用 warn 来记录刚上线时的业务行为信息，一定要注意日志输出量的问题，避免把服务器磁盘撑爆，并记得及时删除这些观察日志</p>
+</li>
+</ol>
+<h2 id="七、单元测试"><a href="#七、单元测试" class="headerlink" title="七、单元测试"></a>七、单元测试</h2><p>好的单元测试必须遵守 AIR 原则。<br>说明：单元测试在线上运行时，感觉像空气（AIR）一样并不存在，但在测试质量的保障上， 却是非常关键的。好的单元测试宏观上来说，具有自动化、独立性、可重复执行的特点。 </p>
+<ul>
+<li>A：Automatic（自动化） </li>
+<li>I：Independent（独立性） </li>
+<li>R：Repeatable（可重复）</li>
+</ul>
+<ol>
+<li><p>对于单元测试，要保证测试粒度足够小，有助于精确定位问题。单测粒度至多是类级别，一般是方法级别。</p>
+</li>
+<li><p>核心业务、核心应用、核心模块的增量代码确保单元测试通过。 说明：新增代码及时补充单元测试，如果新增代码影响了原有单元测试，请及时修正。</p>
+</li>
+<li><p>单元测试代码必须写在如下工程目录：src/test/java，不允许写在业务代码目录下。<br>说明：源码构建时会跳过此目录，而单元测试框架默认是扫描此目录。</p>
+</li>
+</ol>
+<h5 id="参考文档：《阿里巴巴Java开发手册》"><a href="#参考文档：《阿里巴巴Java开发手册》" class="headerlink" title="参考文档：《阿里巴巴Java开发手册》"></a>参考文档：《阿里巴巴Java开发手册》</h5>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/15/初识Kafka/" rel="next" title="初识Kafka">
+                <i class="fa fa-chevron-left"></i> 初识Kafka
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Cisol</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、命名规范"><span class="nav-number">1.</span> <span class="nav-text">一、命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、代码格式"><span class="nav-number">2.</span> <span class="nav-text">二、代码格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、语句"><span class="nav-number">3.</span> <span class="nav-text">三、语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、注释规约"><span class="nav-number">4.</span> <span class="nav-text">四、注释规约</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、代码度量"><span class="nav-number">5.</span> <span class="nav-text">五、代码度量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、日志处理"><span class="nav-number">6.</span> <span class="nav-text">六、日志处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、单元测试"><span class="nav-number">7.</span> <span class="nav-text">七、单元测试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#参考文档：《阿里巴巴Java开发手册》"><span class="nav-number">7.0.0.1.</span> <span class="nav-text">参考文档：《阿里巴巴Java开发手册》</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cisol</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
